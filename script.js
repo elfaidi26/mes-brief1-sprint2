@@ -13,25 +13,26 @@ let prochainId = 3;
 
 const liste = document.querySelector("#liste-produits");
 
-function Afficher() {
+function afficher() {
   
   produits.forEach(function (produit) {
-    const modeleProduit = document.createElement("ul")
-    const Produit = document.createElement("li")
-    Produit.classList.add("Produit")
-    const div = document.createElement("div")
-    const nom = document.createElement("strong")
-    nom.classList.add("nom-produit")
-    nom.textContent = produit.nom
-    const prix = document.createElement("span")
-    prix.classList.add("prix-produit")
-    prix.textContent = produit.prix  
-    div.append(strong , span )
-    li.append(div)
-
-
-    
-
+    const Produit = document.createElement("li");
+    Produit.className = "produit";
+    const div = document.createElement("div");
+    const Nom = document.createElement("strong");
+    Nom.classNamec = "nom-produit";
+    Nom.textContent = produit.nom;
+    const Prix = document.createElement("span");
+    Prix.className = "prix-produit"
+    Prix.textContent = produit.prix;
+    div.append(Nom , Prix) ;
+    const Btn = document.createElement("button");
+    Btn.className = "supprimer";
+    Btn.setAttribute("type" , "button");
+    Btn.textContent = "Retirer";
+    Produit.append(div,Btn);
+    liste.append(Produit);
   })
 
 }
+afficher();
